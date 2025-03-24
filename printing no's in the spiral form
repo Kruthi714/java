@@ -1,0 +1,72 @@
+import java.util.*;
+import java.util.Arrays;
+public class Main
+{
+    public static void printarr(int ans[][],int r,int c)
+    {
+        System.out.println(" ");
+        System.out.println("final spiral matrix: ");
+        for(int i=0;i<r;i++)
+            {
+                for(int j=0;j<c;j++)
+                {
+                    System.out.print(ans[i][j]+" ");  
+                }
+                System.out.println(" ");
+            }
+    }
+    public static void spiral(int n)
+    {
+       Scanner sc=new Scanner(System.in);
+        System.out.print("enter the no of row: ");
+        int r=sc.nextInt();
+        System.out.print("enter the no of col: ");
+        int c=sc.nextInt();
+        int b[][]=new int[r][c];
+       int total=1;
+       int i,j;
+       int toprow=0;
+       int bottomrow=r-1;
+       int leftcol=0;
+       int rightcol=c-1;
+       while(total <= n){
+           for(j=leftcol;j<=rightcol && total<=n;j++)
+            {
+               b[toprow][j]=total;
+                total++;
+            }
+            toprow++;
+           
+            for(i=toprow;i<=bottomrow && total<=n;i++)
+            {
+                b[i][rightcol]=total;
+                total++;
+            }
+           
+            rightcol--;
+            for(j=rightcol;j>=leftcol && total<=n;j--)
+            {
+                b[bottomrow][j]=total;
+                total++;
+               
+            }
+            bottomrow--;
+            for(i=bottomrow;i>=toprow && total<=n;i--)
+            {
+                b[i][leftcol]=total;
+                total++;
+               
+            }
+            leftcol++;
+    }
+    printarr(b,r,c);
+}
+   
+   
+public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+        System.out.print("enter the no of elements: ");
+        int n=sc.nextInt();
+        spiral(n);
+        }
+    }
