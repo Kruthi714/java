@@ -1,0 +1,51 @@
+import java.util.*;
+import java.util.Arrays;
+public class Main
+{
+    public static int prefix(int arr[][],int L1,int C1,int L2,int C2)
+    {
+        int i,j;
+       int sum=0;
+           for(j=L1;j<=L2;j++)
+           {
+            for(i=C1;i<=C2;i++)
+           {
+               sum=sum+arr[j][i];
+           }
+            }
+       return sum;
+       
+    }
+   
+   
+public static void main(String[] args) {
+    int total;
+Scanner sc=new Scanner(System.in);
+        System.out.print("enter the no of row: ");
+        int r=sc.nextInt();
+        System.out.print("enter the no of col: ");
+        int c=sc.nextInt();
+        int arr[][]=new int[r][c];
+        System.out.println("array elements:");
+        for(int i=0;i<r;i++)
+            {
+                for(int j=0;j<c;j++)
+                {
+                    arr[i][j]=sc.nextInt();  
+                }
+               
+            }
+        System.out.print("enter row from which u want to add: ");
+        int L1=sc.nextInt();
+        System.out.print("enter col from which u want to add: ");
+        int C1=sc.nextInt();
+        System.out.print("enter row from which u want to end: ");
+        int L2=sc.nextInt();
+        System.out.print("enter col from which u want to end: ");
+        int C2=sc.nextInt();
+        total=prefix(arr,L1,C1,L2,C2);
+        System.out.print("total sum is: "+total);
+
+        }
+    }
+
