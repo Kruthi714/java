@@ -1,0 +1,49 @@
+
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Main
+{
+    public static boolean tar(int arr[],int ind)
+    {
+        if(ind>=arr.length-1)
+        {
+            return true;
+        }
+        if(arr[ind]>arr[ind+1])
+        {
+            return false;
+        }
+        return(tar(arr,ind+1));
+    }
+        
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n;
+	    int indx=0;
+		System.out.println("enter the array size: ");
+		n=sc.nextInt();
+		int arr[]=new int[n];
+		System.out.println("enter the array elements: ");
+		for(int i=0;i<n;i++)
+		{
+		   arr[i]=sc.nextInt();
+		}
+		
+		System.out.println("array elements are: ");
+		for(int i=0;i<n;i++)
+		{
+		   System.out.println(arr[i]);
+		}
+		
+		if(tar(arr,indx))
+		{
+		    System.out.println("Yes");
+		}
+		else
+		{
+		    System.out.println("No");
+		}
+
+		
+	}
+}
