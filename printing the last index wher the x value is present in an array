@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main
+{
+    public static int tar(int arr[],int n,int target)
+    {
+        if(n<0)
+        {
+            return -1;
+        }
+        if(target==arr[n])
+        {
+            return n;
+        }
+           return(tar(arr,n-1,target));
+    }
+        
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n;
+	    System.out.println("enter the target value: ");
+        int target=sc.nextInt();
+	    
+		System.out.println("enter the array size: ");
+		n=sc.nextInt();
+		int arr[]=new int[n];
+		System.out.println("enter the array elements: ");
+		for(int i=0;i<n;i++)
+		{
+		   arr[i]=sc.nextInt();
+		}
+		
+		System.out.println("array elements are: ");
+		for(int i=0;i<n;i++)
+		{
+		   System.out.println(arr[i]);
+		}
+		System.out.println("target element is found at ");
+		System.out.println(tar(arr,n-1,target));
+		
+	}
+}
