@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main
+{
+    public static String find(String s,int first,int last)
+    {
+        if(first>last)
+        {
+            return "is a palindrome";
+        }
+        if(s.charAt(first)!=s.charAt(last))
+        {
+           return "not a palindrome";
+        }
+        
+        return(find(s,first+1,last-1));
+      
+    }
+public static void main(String[] args)
+{
+  Scanner sc=new Scanner(System.in);  
+  String s=sc.nextLine();
+  int last=s.length()-1;
+  int first=0;
+  System.out.println(find(s,first,last));
+
+}
+}
