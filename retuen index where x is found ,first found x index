@@ -3,17 +3,17 @@ import java.util.Scanner;
 
 public class Main
 {
-    public static int tar(int arr[],int n,int target)
+    public static int tar(int arr[],int ind,int target)
     {
-        if(n<0)
+        if(ind>=arr.length)
         {
             return -1;
         }
-        if(target==arr[n])
+        if(target==arr[ind])
         {
-            return n;
+            return ind;
         }
-           return(tar(arr,n-1,target));
+           return(tar(arr,ind+1,target));
     }
         
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class Main
 	    int n;
 	    System.out.println("enter the target value: ");
         int target=sc.nextInt();
-	    
+	    int ind=0;
 		System.out.println("enter the array size: ");
 		n=sc.nextInt();
 		int arr[]=new int[n];
@@ -36,7 +36,7 @@ public class Main
 		{
 		   System.out.println(arr[i]);
 		}
-		System.out.println(tar(arr,n-1,target));
+		System.out.println(tar(arr,ind,target));
 
 		
 	}
