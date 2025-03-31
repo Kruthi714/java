@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main
+{
+    public static String reverse(String s,int ind)
+    {
+        if(ind<0)
+        {
+            return "";
+        }
+       String a="";
+       String f="";
+       a=a+s.charAt(ind);
+        f=reverse(s,ind-1);
+        a=a+f;
+        return a;
+ 
+     
+        
+    }
+public static void main(String[] args)
+{
+  Scanner sc=new Scanner(System.in);  
+  String s=sc.nextLine();
+  int ind=s.length()-1;
+  String b=reverse(s,ind);
+  System.out.println(b);
+}
+}
