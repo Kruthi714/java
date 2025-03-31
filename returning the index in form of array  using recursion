@@ -1,0 +1,51 @@
+
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Main
+{
+    public static ArrayList<Integer> tar(int arr[],int ind,int target)
+    {
+        if(ind>=arr.length)
+        {
+            return new ArrayList<Integer>();
+        }
+        ArrayList<Integer>ans=new ArrayList<>();
+        if(target==arr[ind])
+        {
+            ans.add(ind);
+        }
+           ArrayList<Integer>smallans=tar(arr,ind+1,target);
+           ans.addAll(smallans);
+           return ans;
+    }
+        
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n;
+	    System.out.println("enter the target value: ");
+        int target=sc.nextInt();
+	    int indx=0;
+		System.out.println("enter the array size: ");
+		n=sc.nextInt();
+		int arr[]=new int[n];
+		System.out.println("enter the array elements: ");
+		for(int i=0;i<n;i++)
+		{
+		   arr[i]=sc.nextInt();
+		}
+		
+		System.out.println("array elements are: ");
+		for(int i=0;i<n;i++)
+		{
+		   System.out.println(arr[i]);
+		}
+		System.out.println("target value is found in ");
+		ArrayList<Integer> ans=tar(arr,indx,target);
+		for(Integer i:ans)
+		{
+		    System.out.println(i);
+		}
+
+		
+	}
+}
