@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main
+{
+    public static String remove(String s,int ind)
+    {
+        String ans="";
+        String f="";
+        if(ind>s.length()-1)
+        {
+            return "";
+        }
+        if(s.charAt(ind)!='a')
+        {
+          ans=ans+s.charAt(ind);
+        }
+        f=remove(s,ind+1);
+        ans=ans+f;
+        return ans;
+     
+        
+    }
+public static void main(String[] args)
+{
+  Scanner sc=new Scanner(System.in);  
+  String s=sc.nextLine();
+  int ind=0;
+  String b=remove(s,ind);
+  System.out.println(b);
+}
+}
