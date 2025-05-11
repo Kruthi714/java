@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void target(int a[][],int t,int n,int m)
+    {
+       int s=0;
+       int e=n*m-1;
+       boolean found=false;
+       while(s<=e)
+       {
+           int mid=s+(e-s)/2;
+           int k=mid/m;
+           int p=mid%m;
+           if(a[k][p]==t)
+           {
+              System.out.print("target found "); 
+              found=true;
+              break;
+           }
+           else if(a[k][p]>t)
+           {
+               e=mid-1;
+           }
+           else{
+               s=mid+1;
+           }
+       }
+       if(!found)
+       {
+          System.out.print("target not found ");  
+       }
+       
+		
+    }
+    
+    
+    
+    
+    
+    
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		int a[][]=new int[n][m];
+		for(int i=0;i<n;i++)
+		{
+		    for(int j=0;j<m;j++)
+		    {
+		        a[i][j]=sc.nextInt();
+		    }
+		}
+		for(int i=0;i<n;i++)
+		{
+		    for(int j=0;j<m;j++)
+		    {
+		        System.out.print(a[i][j]+" ");
+		    }
+		    System.out.println();
+		    
+		}
+		int t=sc.nextInt();
+		target(a,t,n,m);
+	}
+}
