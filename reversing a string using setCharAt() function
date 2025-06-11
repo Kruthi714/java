@@ -1,0 +1,18 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        StringBuilder sb=new StringBuilder("hello");
+        int i=0,j=sb.length()-1;
+        char k;
+        while(i<j)
+        {
+            k=sb.charAt(i);
+            sb.setCharAt(i,sb.charAt(j));
+            sb.setCharAt(j,k);
+            i++;
+            j--;
+        }
+        System.out.println(sb.toString());
+    }
+}
