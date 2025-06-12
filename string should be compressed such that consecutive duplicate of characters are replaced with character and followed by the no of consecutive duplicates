@@ -1,0 +1,33 @@
+
+
+class Main {
+    public static void main(String[] args) {
+        
+        String s="aabbbbcccddde";
+        String ans="";
+        int count=1;
+        for(int i=1;i<s.length();i++)
+        {
+            char cur=s.charAt(i);
+            char pre=s.charAt(i-1);
+            
+                if(cur==pre)
+                {
+                    
+                    count++;
+                    
+                }
+                else
+                {
+                    ans+=s.charAt(i-1);
+                    
+                    ans+=count;
+                    count=1;
+                }
+
+        }
+        ans+=s.charAt(s.length()-1);
+        ans+=count;
+        System.out.println(ans);
+    }
+}
