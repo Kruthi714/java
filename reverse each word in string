@@ -1,0 +1,27 @@
+
+
+class Main {
+    public static void main(String[] args) {
+        
+        String s="I am kruthi";
+        StringBuilder b=new StringBuilder("");
+        String ans="";
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)!=' ')
+            {
+                b.append(s.charAt(i));
+            }
+            else
+            {
+                b.reverse();
+                ans+=b+" ";
+                b.setLength(0);
+                
+            }
+        }
+        b.reverse();
+        ans+=b;
+        System.out.println(ans);
+    }
+}
