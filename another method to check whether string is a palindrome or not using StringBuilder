@@ -1,0 +1,18 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String sb="madam";
+        StringBuilder b=new StringBuilder(sb);
+        b.reverse();
+        String c=b+"";
+        if(sb.equals(c))
+        {
+            System.out.println("it is a palindrome");
+        }
+        else
+        {
+            System.out.println("it is not palindrome");
+        }
+    }
+}
