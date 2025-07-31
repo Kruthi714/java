@@ -1,0 +1,112 @@
+
+import java.util.*;
+class Main {
+    public static class Node{
+        int data;
+        Node next;
+        Node(int data)
+        {
+           this.data=data; 
+        }
+        
+    }
+    public static class linkedlist{
+        Node head=null;
+        Node tail=null;
+        int size=0;
+        void add(int val)
+        {
+            
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+                tail=temp;
+            }
+            else
+            {
+                tail.next=temp;
+                tail=temp;
+            }
+            size+=1;
+        }
+        void insertAtend(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else
+            {
+                tail.next=temp;
+            }
+            tail=temp;
+            size+=1;
+        }
+        void insertAthead(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                tail=temp;
+            }
+            else
+            {
+                temp.next=head;
+            }
+            head=temp;
+            size+=1;
+        }
+        void insertat(int ind,int val)
+        {
+            if(ind<0 && ind>size)
+            {
+                System.out.println("invalid");
+                return;
+            }
+            else if(ind==0)
+            {
+                insertAthead(val);
+            }
+            else if(ind==size)
+            {
+                insertAtend(val);
+            }
+            else
+            {
+                Node tt=head;
+                Node p=new Node(val);
+                for(int i=0;i<ind-1;i++)
+                {
+                    tt=tt.next;
+                }
+                p.next=tt.next;
+                tt.next=p;
+                tail=p;
+            }
+        }
+        void display()
+        {
+           Node t=head;
+           while(t!=null)
+           {
+               System.out.print(t.data+" ");
+               t=t.next;
+           }
+        }
+    }
+    public static void main(String[] args) {
+        linkedlist l1=new linkedlist();
+        l1.add(5);
+        l1.add(6);
+        l1.insertAtend(7);
+        l1.insertAthead(1);
+        l1.insertat(1,2);
+        l1.insertat(5,8);
+        System.out.println(l1.tail.data);
+        l1.display();
+        System.out.println();
+        System.out.println(l1.size);
+    }
+}
