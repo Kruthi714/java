@@ -1,0 +1,33 @@
+
+import java.util.*;
+class Main {
+    public static void remove(Stack<Integer> s,int ind)
+    {
+        if(s.size()==ind)
+        {
+            s.pop();
+            return;
+        }
+        int top=s.pop();
+        remove(s,ind);
+        s.push(top);
+        
+        
+    }
+    public static void main(String[] args) {
+        
+        Stack<Integer> st=new Stack<>();
+        Stack<Integer> ts=new Stack<>();
+        Stack<Integer> a=new Stack<>();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        while(st.size()!=n)
+        {
+            int x=sc.nextInt();
+            st.push(x);
+        }
+        System.out.println(st);
+        remove(st,1);
+        System.out.println(st);
+    }
+}
