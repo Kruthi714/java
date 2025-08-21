@@ -1,0 +1,28 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        
+        Stack<Integer> st=new Stack<>();
+        Stack<Integer> ts=new Stack<>();
+        Stack<Integer> a=new Stack<>();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        while(st.size()!=n)
+        {
+            int x=sc.nextInt();
+            st.push(x);
+        }
+        System.out.println(st);
+        while(st.size()!=0)
+        {
+            ts.push(st.pop());
+        }
+        System.out.println(ts);
+        while(ts.size()!=0)
+        {
+            a.push(ts.pop());
+        }
+        System.out.println(a);
+    }
+}
