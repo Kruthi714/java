@@ -1,0 +1,45 @@
+
+import java.util.*;
+class Main {
+    public static int isBalned(String s)
+    {
+        int n=s.length();
+        int c=0;
+        Stack<Character>st=new Stack<>();
+        for(int i=0;i<n;i++)
+        {
+            char ch=s.charAt(i);
+            if(ch=='(')
+            {
+                st.push(ch);
+            }
+            else
+            {
+                 if(st.size()==0)
+                    {
+                        st.push(ch);
+                    }
+                    else
+                {
+                   if(st.peek()=='(')
+                {
+                    st.pop();
+                }
+                }
+                
+                
+            }
+        }
+    
+        while(st.size()>0)
+        {
+            c=c+1;
+            st.pop();
+        }
+        return c;
+    }
+    public static void main(String[] args) {
+        String s="()()(()))()";
+        System.out.println(isBalned(s));
+    }
+}
