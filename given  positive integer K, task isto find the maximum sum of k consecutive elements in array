@@ -1,0 +1,17 @@
+class Main {
+    public static void main(String[] args) {
+        int k=4,i,j,sum=0;
+        int maxi=Integer.MIN_VALUE;
+        int arr[]={1,4,2,10,23,3,1,0,20};
+        for(i=0;i<arr.length-k+1;i++)
+        {
+            sum=0;
+            for(j=i;j<i+k;j++)
+            {
+                sum=sum+arr[j];
+            }
+            maxi=Math.max(maxi,sum);
+        }
+        System.out.println(maxi);
+    }
+}
