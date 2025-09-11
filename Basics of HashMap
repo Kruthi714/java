@@ -1,0 +1,26 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Map<String,Integer>mp=new HashMap<>();
+        mp.put("aman",17);
+        mp.put("ajay",19);
+        mp.put("gagan",21);
+        mp.put("kruthi",18);
+        System.out.println(mp);
+        if(!mp.containsKey("riya"))
+        {
+            mp.put("riya",25);
+        }
+         System.out.println(mp);
+         System.out.println(mp.entrySet());
+         System.out.println(mp.values());
+         System.out.println(mp.keySet());
+         for(Map.Entry<String,Integer> e:mp.entrySet())
+         {
+            System.out.printf("age of %s is %d ",e.getKey(),e.getValue()); 
+            System.out.println();
+         }
+         
+    }
+}
