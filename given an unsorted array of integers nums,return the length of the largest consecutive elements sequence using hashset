@@ -1,0 +1,35 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int arr[]={0,3,7,2,5,3,4,6,0,1,8};
+        // int arr[]={200,4,100,3,2,1};
+        int c=0;
+        HashSet<Integer>st=new HashSet<>();
+        for(int i:arr)
+        {
+            st.add(i);
+        }
+        for(int i:st)
+        {
+            System.out.print(i+" ");
+        }
+        for(int nums:st)
+        {
+            if(!st.contains(nums-1))
+            {
+                
+                int currno=nums;
+                int currstreak=1;
+                while(st.contains(currno+1))
+                {
+                    currno=currno+1;
+                    currstreak+=1;
+                }
+               c=Math.max(c,currstreak);
+                
+            }
+        }
+        System.out.println();
+         System.out.println(c);
+    }
+}
