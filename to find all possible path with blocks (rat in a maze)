@@ -1,0 +1,27 @@
+
+import java.util.*;
+class Main {
+    public static void maze(int sr,int sc,int er,int ec,int mat[][],String s)
+    {
+        if(sr>er || sc>ec) return;
+       
+        if(sr==er && sc==ec)
+        {
+            System.out.println(s);
+            return;
+        }
+         if(mat[sr][sc]==0)return;
+       
+        maze(sr+1,sc,er,ec,mat,s+"D");
+        maze(sr,sc+1,er,ec,mat,s+"R");
+    }
+    public static void main(String[] args) {
+        int r=4;
+        int c=6;
+        int mat[][]={{1,0,1,1,1,1},{1,1,1,1,0,1},{0,1,1,1,1,1},{0,0,1,0,1,1}};
+        maze(0,0,r-1,c-1,mat," ");
+        
+        
+    }
+}
+//correct one
