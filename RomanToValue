@@ -1,0 +1,41 @@
+
+import java.util.*;
+class Main {
+    public static void RomantoValue(String s)
+    {
+        int t=0,n;
+        Map<Character,Integer>mp=new HashMap<>();
+        mp.put('I',1);
+        mp.put('V',5);
+        mp.put('X',10);
+        mp.put('L',50);
+        mp.put('C',100);
+        mp.put('D',500);
+        mp.put('M',1000);
+        for(int i=0;i<s.length();i++)
+        {
+            int c=mp.get(s.charAt(i));
+            if(i+1<s.length())
+            {
+                n=mp.get(s.charAt(i+1));
+                if(c<n)
+                {
+                    t-=c;
+                }
+                else
+                {
+                    t+=c;
+                }
+            }
+            else
+            {
+                t+=c;
+            }
+        }
+        System.out.println(t);
+}
+    public static void main(String[] args) {
+        String s="III";
+        RomantoValue(s);
+    }
+}
